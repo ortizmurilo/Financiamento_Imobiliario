@@ -30,7 +30,7 @@ public class Financiamento {
     //Aqui criamos os métodos de cálcuo para o pagamento mensal, e o pagamento total.
     public double pagamentoMensal()
     {
-        return (valorImovel/ (prazoFinanciamento * 12)) * (1+ taxaJurosAnual/12);
+        return (valorImovel/ (prazoFinanciamento * 12)) * (1+ taxaJurosAnual/100/12);
 
     }
 
@@ -46,12 +46,11 @@ public class Financiamento {
         return totalPagamento();
     }
 
-    public boolean getDadosFinanciamento(){
+    public void DadosFinanciamento(){
         System.out.println("Valor do imóvel: R$ " + getValorImovel());
         System.out.println("Prazo do financiamento: " + getPrazoFinanciamento() + " anos");
         System.out.println("Taxa de juros anual: " + getTaxaJurosAnual() + "%");
         System.out.println("Pagamento mensal: R$ " + getPagamentMensal());
         System.out.println("Valor total do financiamento: R$ " + getTotalPagamento());
-        return false;
     }
 }

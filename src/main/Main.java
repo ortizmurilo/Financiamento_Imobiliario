@@ -1,4 +1,5 @@
 package main;
+import java.util.ArrayList;
 
 import modelo.Financiamento;
 import util.InterfaceUsuario;
@@ -10,12 +11,38 @@ public class Main {
     public static void main(String[] args){
     InterfaceUsuario interfaceUsuario = new InterfaceUsuario();
 
-    double valor = interfaceUsuario.pedirValor();
-    int prazo = interfaceUsuario.pedirPrazo();
-    double taxa = interfaceUsuario.pedirTaxa();
+    ArrayList<Financiamento> listaFinanciamentos = new ArrayList<>();
 
-    Financiamento f = new Financiamento(valor, prazo, taxa);
+    int quantidade = interfaceUsuario.pedirQuantidadeFinanciamentos();
 
-    System.out.println(f.getDadosFinanciamento());
+    for (int i = 1; i <= quantidade; i++){
+        System.out.println("\n===== FINANCIAMENTO " + i + " =====");
+        double valor = interfaceUsuario.pedirValor();
+        int prazo = interfaceUsuario.pedirPrazo();
+        double taxa = interfaceUsuario.pedirTaxa();
+
+        Financiamento financiamento = new Financiamento(valor, prazo, taxa);
+        listaFinanciamentos.add(financiamento);
     }
+        double totalImoveis = 0;
+        double totalFinanciamentos = 0;
+
+        System.out.println("\n===== DADOS DOS FINANCIAMENTOS =====");
+
+        for (Financiamento f : listaFinanciamentos) {
+
+            f.DadosFinanciamento();
+
+            totalImoveis += f.getValorImovel();
+            totalFinanciamentos += f.getTotalPagamento();
+
+            System.out.println("-----------------------------------");
+        }
+
+        System.out.println("\n===== TOTAIS =====");
+        System.out.println("Total de todos os imóveis: R$ " + totalImoveis);
+        System.out.println("Total de todos os financiamentos: R$ " + totalFinanciamentos);
+        interfaceUsuario.fecharScanner();
+    }
+
 }

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 //2. Criamos nossa segunda classe, onde sera pedido as informacoes necessarias para o usuario
 public class InterfaceUsuario{
-    Scanner scanner = new Scanner(System.in);
+    public Scanner scanner = new Scanner(System.in);
 
     public double pedirValor() {
         double valorImovel;
@@ -53,4 +53,23 @@ public class InterfaceUsuario{
         System.out.println("Taxa aceita: " + taxaJurosAnual);
         return taxaJurosAnual;
     }
+
+    public int pedirQuantidadeFinanciamentos() {
+        int quantidade;
+
+        do {
+            System.out.println("Quantos financiamentos deseja cadastrar?");
+            quantidade = scanner.nextInt();
+
+            if (quantidade <= 0) {
+                System.out.println("Digite um valor maior que zero.");
+            }
+
+        } while (quantidade <= 0);
+
+        return quantidade;
+    }
+
+    public void fecharScanner() {
+        scanner.close();}
 }
