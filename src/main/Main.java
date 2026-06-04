@@ -17,8 +17,7 @@ public class Main {
     ArrayList<Financiamento> listaFinanciamentos = new ArrayList<>();
 
     int quantidade = interfaceUsuario.pedirQuantidadeFinanciamentos();
-    //Aqui irei deixar o loop for funcionando apenas para fim de funcionamento de código.
-    //Mas basta o professor digitar 1, para pedir os dados para so um financiamento como o solicitado.
+
     for (int i = 1; i <= quantidade; i++){
         System.out.println("\n===== FINANCIAMENTO " + i + " =====");
 
