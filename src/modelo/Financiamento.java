@@ -34,7 +34,7 @@ public class Financiamento {
 
     }
 
-    public double getPagamentMensal(){
+    public double getPagamentoMensal(){
         return pagamentoMensal();
     }
 
@@ -47,10 +47,12 @@ public class Financiamento {
     }
 
     public void DadosFinanciamento(){
+
+
         System.out.println("Valor do imóvel: R$ " + getValorImovel());
         System.out.println("Prazo do financiamento: " + getPrazoFinanciamento() + " anos");
         System.out.println("Taxa de juros anual: " + getTaxaJurosAnual() + "%");
-        System.out.println("Pagamento mensal: R$ " + getPagamentMensal());
+        System.out.println("Pagamento mensal: R$ " + getPagamentoMensal());
         System.out.println("Valor total do financiamento: R$ " + getTotalPagamento());
     }
 }

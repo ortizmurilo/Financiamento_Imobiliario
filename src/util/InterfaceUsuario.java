@@ -50,7 +50,7 @@ public class InterfaceUsuario{
             }
         } while (taxaJurosAnual <= 0);
 
-        System.out.println("Taxa aceita: " + taxaJurosAnual);
+        System.out.println("Taxa aceita: " + taxaJurosAnual + "\n");
         return taxaJurosAnual;
     }
 
@@ -68,6 +68,24 @@ public class InterfaceUsuario{
         } while (quantidade <= 0);
 
         return quantidade;
+    }
+
+    public int pedirTipoFinanciamento() {
+        int tipo;
+
+        do {
+            System.out.println("Tipo de financiamento:");
+            System.out.println("(1) Casa");
+            System.out.println("(2) Apartamento");
+            System.out.println("(3) Terreno");
+            tipo = scanner.nextInt();
+
+            if (tipo < 1 || tipo > 3) {
+                System.out.println("Opção inválida! Digite 1, 2 ou 3.");
+            }
+        } while (tipo < 1 || tipo > 3);
+
+        return tipo;
     }
 
     public void fecharScanner() {
