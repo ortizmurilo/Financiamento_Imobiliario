@@ -65,7 +65,7 @@ src/
 
 ## 📌 Status do Projeto
 
-🚧 Em desenvolvimento — novas funcionalidades serão adicionadas em breve.
+Finalizado.
 
 ---
 
